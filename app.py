@@ -4,7 +4,7 @@ import requests
 
 app = Flask(__name__)
 
-backend_URL = environ.get('BACKEND_URL', 'http://10.1.9.80:5001/')
+backend_URL = environ.get('BACKEND_URL', 'http://backend:5001/')
 log = []
 
 def get_animals():
