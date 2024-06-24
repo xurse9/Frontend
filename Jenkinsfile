@@ -62,7 +62,7 @@ pipeline {
             steps {
                 dir('ArgoCD') {
                     withCredentials([gitUsernamePassword(credentialsId: 'git', gitToolName: 'Default')]) {
-                        git branch: 'main', url: 'https://github.com/xurse9/argocd.git'
+                        git branch: 'master', url: 'https://github.com/xurse9/argocd.git'
                         sh """ cd frontend
                         sed -i "s#$imageName.*#$imageName:$dockerTag#g" deployment.yaml
                         git commit -am "Set new $dockerTag tag."
